@@ -27,7 +27,7 @@ npm install teluguscript
 Here are the core keywords in TeluguScript:
 
 ### Variable Declarations
-- `maaredhi`: `let`
+- `maredhi`: `let`
 - `maranadhi`: `const`
 
 ### Control Flow
