@@ -1,0 +1,11 @@
+{
+  "name": "teluguscript",
+  "version": "1.0.0",
+  "description": "TeluguScript is a programming language designed to honor Telugu Talli and celebrate the beauty of the Telugu language in the programming world. It is a transpiler that converts Telugu syntax into JavaScript, making coding an expressive and meaningful experience for Telugu-speaking developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vanka Siddhartha",
+  "license": "ISC"
+}
