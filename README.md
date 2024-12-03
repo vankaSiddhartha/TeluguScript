@@ -1,6 +1,6 @@
 # TeluguScript
 
-![TeluguScript Logo](https://firebasestorage.googleapis.com/v0/b/tech-vanka-chimki.appspot.com/o/teluguScript.png?alt=media&token=a83462b4-8500-4069-b255-63ba9f73486e)
+![TeluguScript Logo](https://firebasestorage.googleapis.com/v0/b/tech-vanka-chimki.appspot.com/o/teluguScript%20(1).png?alt=media&token=0f24ed3a-edc1-4c01-ac95-4198b341f23a)
 
 **TeluguScript** is a programming language designed to honor *Telugu Talli* and celebrate the beauty of the Telugu language in the programming world. It is a transpiler that converts Telugu syntax into JavaScript, making coding an expressive and meaningful experience for Telugu-speaking developers.
 
