@@ -1,1 +1,3 @@
 cheppu("hi ala vunavu")
+a=10
+cheppu(a)

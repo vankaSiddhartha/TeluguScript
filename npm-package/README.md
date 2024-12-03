@@ -67,8 +67,8 @@ pani chinna_pani(name, age) {
     cheppu("Vayasu: " + age);
 }
 
-maaredhi name = "Siddhartha";
-maranadhi age = 25;
+maredhi name = "Siddhartha";
+maranadhi age = 21;
 chinna_pani(name, age);
 ```
 
