@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const fs = require('fs') // fs for file system manipulation
 //heart of the TeluguScript
 const translateToJS =(code)=>{

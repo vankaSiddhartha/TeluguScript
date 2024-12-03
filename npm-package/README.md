@@ -89,7 +89,7 @@ chinna_pani(name, age);
 Execute TeluguScript files using npx:
 
 ```bash
-npx telugu your_file.tel
+npx teluguscript your_file.tel
 ```
 
 ## Special Mention
