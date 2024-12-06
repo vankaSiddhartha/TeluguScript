@@ -1,0 +1,17 @@
+// 'pani' is 'function'
+pani fetchData =  () => {
+  // 'maredhi' is 'let'
+  maredhi response = await agu fetch('https://api.example.com/data');
+  
+  // 'phalitam' is 'return'
+  phalitam await response.json();
+};
+
+// 'edi itey' is 'if'
+edi itey (fetchData) {
+  // 'cheppu' is 'console.log'
+  cheppu('Data fetched successfully');
+} lekapote {
+  // 'cheppu' is 'console.log'
+  cheppu('Error fetching data');
+}
