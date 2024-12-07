@@ -57,3 +57,8 @@ We are actively working on expanding TeluguScript's capabilities:
 | `phalitam`  | `return`   | Return a value |
 
 For more information, suggestions, or contributions, please reach out to the project maintainer
+## Special Mention
+I was inspired by **TempleOS** created by **Terry A. Davis**. While I may not be as legendary as him, I share the same extreme passion for computer science that he had. His unique vision and dedication to his craft serve as a constant reminder of what can be achieved when you follow your passion.
+ **“It’s not about the money, it’s about the dream”** — Terry A. Davis  
+ *RIP Terry A. Davis, your passion lives on.*
+---
