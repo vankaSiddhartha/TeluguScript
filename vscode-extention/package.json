@@ -1,0 +1,11 @@
+{
+  "name": "teluguscript-highlighter",
+  "version": "1.0.0",
+  "description": "This Visual Studio Code extension adds support for **TeluguScript**, a programming language designed to honor *Telugu Talli* and celebrate the beauty of the Telugu language in the programming world. This extension provides syntax highlighting, IntelliSense, and a transpiler integration for TeluguScript, allowing Telugu-speaking developers to write code using Telugu keywords.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
