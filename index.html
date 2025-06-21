@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeluguScript Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            max-height: 50px;
+            width: auto;
+        }
+
+        .header-text h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .header-text p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007acc;
+            border-bottom-color: #007acc;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            border-left: 3px solid #e1e8ed;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 8px 15px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+            margin-left: -3px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: #007acc;
+            border-left-color: #007acc;
+            background: #f8f9fa;
+        }
+
+        /* Content */
+        .content {
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Code blocks */
+        pre {
+            background: #f6f8fa;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            font-size: 14px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Installation section */
+        .install-command {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            margin: 20px 0;
+        }
+
+        /* Quote */
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid #007acc;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote p {
+            margin-bottom: 10px;
+        }
+
+        .quote .author {
+            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Features list */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+        }
+
+        .feature h4 {
+            margin-top: 0;
+            color: #007acc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Target highlighting */
+        :target {
+            scroll-margin-top: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://firebasestorage.googleapis.com/v0/b/tech-vanka-chimki.appspot.com/o/teluguScript%20(1).png?alt=media&token=0f24ed3a-edc1-4c01-ac95-4198b341f23a"
+                    alt="TeluguScript Logo" class="logo">
+                <div class="header-text">
+                    <h1>TeluguScript</h1>
+                    <p>Programming in Telugu - Honoring Telugu Talli through Code</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#keywords">Keywords</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="content-grid">
+                <aside class="sidebar">
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#keywords">Language Keywords</a></li>
+                        <li><a href="#variables">Variable Declarations</a></li>
+                        <li><a href="#control-flow">Control Flow</a></li>
+                        <li><a href="#loops">Loops</a></li>
+                        <li><a href="#functions">Functions</a></li>
+                        <li><a href="#logging">Logging</a></li>
+                        <li><a href="#objects">Objects & Classes</a></li>
+                        <li><a href="#async">Async Programming</a></li>
+                        <li><a href="#complete-example">Complete Example</a></li>
+                        <li><a href="#tribute">Special Mention</a></li>
+                    </ul>
+                </aside>
+
+                <div class="content">
+                    <section id="overview" class="section">
+                        <h1>TeluguScript Documentation</h1>
+                        <p><strong>TeluguScript</strong> is a programming language designed to honor <strong>Telugu
+                                Talli</strong> and celebrate the beauty of the Telugu language in the programming world.
+                            It is a transpiler that converts Telugu syntax into JavaScript, making coding an expressive
+                            and meaningful experience for Telugu-speaking developers.</p>
+
+                        <p>With <strong>TeluguScript</strong>, developers can write code in Telugu, using native Telugu
+                            words as keywords and syntax. This allows for a deeper connection to the language while
+                            coding, making the development process more inclusive and culturally rich.</p>
+
+                        <p>See <a
+                                href="https://github.com/vankaSiddhartha/TeluguScript/tree/main/documentation">official
+                                documentation</a> for more details.</p>
+                    </section>
+
+                    <section id="installation" class="section">
+                        <h2>Installation</h2>
+                        <p>Install TeluguScript using npm:</p>
+                        <div class="install-command">npm install teluguscript</div>
+                    </section>
+
+                    <section id="features" class="section">
+                        <h2>Features</h2>
+                        <div class="features">
+                            <div class="feature">
+                                <h4>Expressive Programming</h4>
+                                <p>Write code using Telugu keywords and syntax</p>
+                            </div>
+                            <div class="feature">
+                                <h4>Easy to Learn</h4>
+                                <p>Simple and intuitive syntax for native Telugu speakers</p>
+                            </div>
+                            <div class="feature">
+                                <h4>JavaScript Transpiler</h4>
+                                <p>Converts TeluguScript code into JavaScript for execution</p>
+                            </div>
+                            <div class="feature">
+                                <h4>Procedural Programming</h4>
+                                <p>Currently supports procedural programming paradigms</p>
+                            </div>
+                            <div class="feature">
+                                <h4>NPM Installable</h4>
+                                <p>Easy installation via npm package manager</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="keywords" class="section">
+                        <h2>Language Keywords</h2>
+
+                        <div id="variables">
+                            <h3>Variable Declarations</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>maredhi</code></td>
+                                        <td><code>let</code></td>
+                                        <td>Declare a mutable variable</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>maranadhi</code></td>
+                                        <td><code>const</code></td>
+                                        <td>Declare an immutable variable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>maredhi</code> - let</h4>
+                            <p>Use <code>maredhi</code> to declare a variable that can be reassigned.</p>
+                            <pre>maredhi name = "Siddhartha";
+cheppu("Peru: " + name);
+// Output: Peru: Siddhartha
+
+name = "Vamsi";
+cheppu("Updated Name: " + name);
+// Output: Updated Name: Vamsi</pre>
+
+                            <h4><code>maranadhi</code> - const</h4>
+                            <p>Use <code>maranadhi</code> to declare a constant variable that cannot be reassigned.</p>
+                            <pre>maranadhi age = 21;
+cheppu("Vayasu: " + age);
+// Output: Vayasu: 21
+
+// age = 22; // Error: Cannot reassign a constant variable</pre>
+                        </div>
+
+                        <div id="control-flow">
+                            <h3>Control Flow</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>edi itey</code></td>
+                                        <td><code>if</code></td>
+                                        <td>Conditional statement</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lekapote</code></td>
+                                        <td><code>else</code></td>
+                                        <td>Alternative condition</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>oka vela</code></td>
+                                        <td><code>else if</code></td>
+                                        <td>Additional condition</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>edi itey</code> - if</h4>
+                            <p>Use <code>edi itey</code> to check conditions.</p>
+                            <pre>maredhi age = 25;
+edi itey (age >= 18) {
+    cheppu("Adult");
+} lekapote {
+    cheppu("Not an Adult");
+}
+// Output: Adult</pre>
+
+                            <h4><code>oka vela</code> - else if</h4>
+                            <p>Use <code>oka vela</code> when you want to check multiple conditions.</p>
+                            <pre>maredhi age = 20;
+edi itey (age < 18) {
+    cheppu("Underage");
+} oka vela (age >= 18 && age <= 25) {
+    cheppu("Young Adult");
+} lekapote {
+    cheppu("Adult");
+}
+// Output: Young Adult</pre>
+                        </div>
+
+                        <div id="loops">
+                            <h3>Loops</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>malle itey</code></td>
+                                        <td><code>while</code></td>
+                                        <td>Loop while condition is true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>malle</code></td>
+                                        <td><code>for</code></td>
+                                        <td>Iteration loop</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>malle itey</code> - while</h4>
+                            <p>Use <code>malle itey</code> to loop as long as the condition is true.</p>
+                            <pre>maredhi counter = 0;
+malle itey (counter < 5) {
+    cheppu("Counter: " + counter);
+    counter++;
+}
+// Output: Counter: 0
+//         Counter: 1
+//         Counter: 2
+//         Counter: 3
+//         Counter: 4</pre>
+
+                            <h4><code>malle</code> - for</h4>
+                            <p>Use <code>malle</code> to loop a specified number of times.</p>
+                            <pre>maredhi i;
+malle (i = 0; i < 5; i++) {
+    cheppu("i: " + i);
+}
+// Output: i: 0
+//         i: 1
+//         i: 2
+//         i: 3
+//         i: 4</pre>
+                        </div>
+
+                        <div id="functions">
+                            <h3>Functions</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>pani</code></td>
+                                        <td><code>function</code></td>
+                                        <td>Define a function</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>phalitam</code></td>
+                                        <td><code>return</code></td>
+                                        <td>Return a value</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>pani</code> - function</h4>
+                            <p>Use <code>pani</code> to define a function.</p>
+                            <pre>pani greet(name) {
+    cheppu("Hello, " + name);
+}
+
+greet("Siddhartha");
+// Output: Hello, Siddhartha</pre>
+
+                            <h4><code>phalitam</code> - return</h4>
+                            <p>Use <code>phalitam</code> to return a value from a function.</p>
+                            <pre>pani add(a, b) {
+    phalitam a + b;
+}
+
+maredhi result = add(5, 10);
+cheppu("Result: " + result);
+// Output: Result: 15</pre>
+                        </div>
+
+                        <div id="logging">
+                            <h3>Logging</h3>
+                            <h4><code>cheppu</code> - console.log</h4>
+                            <p>Use <code>cheppu</code> to print messages to the console.</p>
+                            <pre>cheppu("Hello, World!");
+// Output: Hello, World!</pre>
+                        </div>
+
+                        <div id="objects">
+                            <h3>Object-Related Keywords</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>paddathi</code></td>
+                                        <td><code>class</code></td>
+                                        <td>Define a class</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>edi</code></td>
+                                        <td><code>this</code></td>
+                                        <td>Reference to current object</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>kotha</code></td>
+                                        <td><code>new</code></td>
+                                        <td>Create new instance</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>paddathi</code> - class</h4>
+                            <p>Use <code>paddathi</code> to define a class.</p>
+                            <pre>paddathi Person {
+    pani initialize(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    pani greet() {
+        cheppu("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+    }
+}
+
+maredhi person = new Person("Siddhartha", 21);
+person.greet();
+// Output: Hello, my name is Siddhartha and I am 21 years old.</pre>
+                        </div>
+
+                        <div id="async">
+                            <h3>Asynchronous Programming</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>TeluguScript</th>
+                                        <th>JavaScript</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>pedda pani</code></td>
+                                        <td><code>async</code></td>
+                                        <td>Define async function</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>agu</code></td>
+                                        <td><code>await</code></td>
+                                        <td>Wait for async operation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4><code>pedda pani</code> - async</h4>
+                            <p>Use <code>pedda pani</code> to define an asynchronous function.</p>
+                            <pre>pedda pani fetchData() {
+    cheppu("Fetching data...");
+    agu new Promise((resolve) => setTimeout(resolve, 2000));
+    cheppu("Data fetched!");
+}
+
+fetchData();
+// Output: Fetching data...
+//         (wait 2 seconds)
+//         Data fetched!</pre>
+                        </div>
+                    </section>
+
+                    <section id="complete-example" class="section">
+                        <h2>Complete Example</h2>
+                        <p>Here's a comprehensive example demonstrating the usage of all keywords:</p>
+                        <pre>paddathi Person {
+    pani initialize(name, age) {
+        edi.name = name;
+        edi.age = age;
+    }
+    
+    pani greet() {
+        cheppu("Hello, my name is " + edi.name + " and I am " + edi.age + " years old.");
+    }
+}
+
+pedda pani fetchPersonData() {
+    maredhi personData = { name: "Siddhartha", age: 21 };
+    agu new Promise((resolve) => setTimeout(resolve, 1000));
+    cheppu("Fetched data: " + personData.name + ", " + personData.age);
+    phalitam personData;
+}
+
+pani main() {
+    cheppu("Fetching person data...");
+    maredhi personInfo = agu fetchPersonData();
+    cheppu("Data fetched!");
+    maredhi person = new Person(personInfo.name, personInfo.age);
+    person.greet();
+}
+
+main();
+
+// Output: Fetching person data...
+//         (wait 1 second)
+//         Fetched data: Siddhartha, 21
+//         Data fetched!
+//         Hello, my name is Siddhartha and I am 21 years old.</pre>
+                    </section>
+
+                    <section id="tribute" class="section">
+                        <h2>Special Mention</h2>
+                        <div class="quote">
+                            <p>I was inspired by <strong>TempleOS</strong> created by <strong>Terry A. Davis</strong>.
+                                While I may not be as legendary as him, I share the same extreme passion for computer
+                                science that he had. His unique vision and dedication to his craft serve as a constant
+                                reminder of what can be achieved when you follow your passion.</p>
+                            <p><strong>"It's not about the money, it's about the dream"</strong> — Terry A. Davis</p>
+                            <p class="author">RIP Terry A. Davis, your passion lives on.</p>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2>Planned Language Enhancements</h2>
+                        <p>We are actively working on expanding TeluguScript's capabilities:</p>
+                        <ul>
+                            <li>Syntax highlighting support</li>
+                            <li>Enhanced code editor integration</li>
+                            <li>Advanced programming paradigm support</li>
+                            <li>Improved transpilation techniques</li>
+                            <li>Richer language constructs and keywords</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+                                                                   </html>
