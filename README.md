@@ -23,7 +23,6 @@ npm install teluguscript
 ```
 
 
-
 ## Planned Language Enhancements
 
 We are actively working on expanding TeluguScript's capabilities:
